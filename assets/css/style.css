@@ -62,8 +62,6 @@ body {
 }
 
 
-
-
 .hero-section {
   background: linear-gradient(
     135deg,
@@ -71,8 +69,9 @@ body {
     #ffffff 50%,
     #d1fae5 100%
   );
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  margin-top: 90px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 
@@ -273,4 +272,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+
 

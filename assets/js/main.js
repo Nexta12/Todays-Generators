@@ -81,40 +81,57 @@ const servicesGrid = document.getElementById("servicesGrid");
 
 const services = [
   {
-    title: "Sales",
-    text: "Sales of fairly used UK Perkins diesel generators.",
-    icon: "bi-cart4"         // Bootstrap Icons class for a cart
+    title: "Generator Sales",
+    text: "We supply high-quality fairly used UK Perkins diesel generators that are carefully inspected, tested, and certified to deliver reliable power performance for residential, commercial, and industrial applications.",
+    icon: "bi-cart4"
   },
   {
-    title: "Repairs & Servicing",
-    text: "Expert repair and servicing of Perkins generators.",
-    icon: "bi-tools"         // wrench & screwdriver icon
+    title: "Repairs",
+    text: "Our skilled technicians diagnose and repair diesel generators efficiently, resolving mechanical and electrical faults to restore optimal performance and minimize operational downtime.",
+    icon: "bi-wrench-adjustable"
   },
   {
-    title: "Rentals",
-    text: "Flexible generator rental solutions.",
-    icon: "bi-truck"         // truck icon
+    title: "Generator Rentals",
+    text: "We offer flexible diesel generator rental solutions for short-term and long-term needs, providing dependable power support for events, construction projects, and emergency backup situations.",
+    icon: "bi-truck"
+  },
+  {
+    title: "Servicing & Maintenance",
+    text: "Routine servicing and preventive maintenance ensure your generator operates efficiently, reduces fuel consumption, and extends equipment lifespan through scheduled inspections and professional care.",
+    icon: "bi-gear"
+  },
+  {
+    title: "Genuine Spare Parts",
+    text: "We supply genuine Perkins spare parts to guarantee compatibility, durability, and optimal performance, helping clients maintain generator reliability and avoid costly breakdowns.",
+    icon: "bi-box-seam"
   }
 ];
 
-
 if (servicesGrid) {
-  services.forEach(service => {
+
+   const isHomePage =
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname.includes("Todays-Generators");
+
+  const servicesToShow = isHomePage
+    ? services.slice(0, 3) //  only 3 on homepage
+    : services;            // all on services page
+
+  servicesToShow.forEach(service => {
     servicesGrid.innerHTML += `
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6">
         <div class="card h-100 text-center service-card">
           <div class="card-body">
-            <i class="bi ${service.icon} display-4 mb-3 text-secondary icon"></i>
+            <i class="bi ${service.icon} display-4 mb-3 icon"></i>
             <h5 class="card-title title-with-underline">${service.title}</h5>
-            <p class="card-text">${service.text}</p>
+            <p class="card-text text-muted">${service.text}</p>
           </div>
         </div>
       </div>
     `;
   });
 }
-
-
 
 
 
@@ -155,19 +172,30 @@ const generators = [
 const generatorsGrid = document.getElementById("generatorsGrid");
 
 if (generatorsGrid) {
-  generators.forEach(gen => {
+  const isHomePage =
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname.includes("Todays-Generators");
+
+  const generatorsToShow = isHomePage
+    ? generators.slice(0, 3) // 👈 only 3 on homepage
+    : generators;            // 👈 all on products page
+
+  generatorsToShow.forEach(gen => {
     const cardDiv = document.createElement("div");
     cardDiv.className = "col-lg-4 col-md-6";
 
     cardDiv.innerHTML = `
       <div class="card h-100 shadow-sm">
         <img src="${gen.image}" class="card-img-top" alt="${gen.name} Generator">
-        <div class="card-body">
+        <div class="card-body text-center">
           <h5 class="card-title">${gen.name}</h5>
-          <p class="card-text">${gen.description}</p>
+          <p class="card-text text-muted">${gen.description}</p>
         </div>
         <div class="card-footer bg-transparent border-0">
-          <a href="generators.html" class="btn btn-outline-emerald w-100">View More</a>
+          <a href="products.html" class="btn btn-outline-emerald w-100">
+            View Details
+          </a>
         </div>
       </div>
     `;
