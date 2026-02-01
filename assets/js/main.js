@@ -121,32 +121,32 @@ if (servicesGrid) {
 const generators = [
   {
     name: "250kVA Caterpillar",
-    image: "/assets/img/16.jpeg",
+    image: "assets/img/16.jpeg",
     description: "Powerful diesel generator designed for heavy-duty and continuous operations."
   },
   {
     name: "200kVA Perkins",
-    image: "/assets/img/a7.jpeg",
+    image: "assets/img/a7.jpeg",
     description: "Reliable Perkins diesel generator built for performance and durability."
   },
   {
     name: "150kVA FG Wilson",
-    image: "/assets/img/17.jpeg",
+    image: "assets/img/17.jpeg",
     description: "High-performance generator suitable for large facilities and estates."
   },
   {
     name: "300kVA Cummins",
-    image: "/assets/img/2.jpeg",
+    image: "assets/img/2.jpeg",
     description: "Industrial-grade generator delivering stable power under heavy loads."
   },
   {
     name: "400kVA Perkins",
-    image: "/assets/img/13.jpeg",
+    image: "assets/img/13.jpeg",
     description: "Heavy-duty Perkins generator for industrial and large commercial use."
   },
   {
     name: "500kVA Caterpillar",
-    image: "/assets/img/25.jpeg",
+    image: "assets/img/25.jpeg",
     description: "High-capacity diesel generator engineered for critical power demands."
   }
 ];
