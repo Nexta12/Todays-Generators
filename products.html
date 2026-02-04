@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head id="site-head"></head>
+<head id="site-head">
+   <style>
+   html{
+      display: none;
+      visibility: hidden;
+    }
+ </style>
+</head>
 
 <body>
   <div id="navbar"></div>
@@ -21,6 +28,9 @@
     </div>
   </section>
 
+
+  <!-- Modal Container -->
+<div id="quote-modal"></div>
   <div id="cta"></div>
   <div id="footer"></div>
 
@@ -29,7 +39,8 @@
   <script>
     loadPageHero(
   "Our Products",
-  "Reliable diesel generators built for industrial and commercial needs"
+  "Reliable diesel generators built for industrial and commercial needs",
+  "assets/img/20.jpeg"
 );
   </script>
 </body>

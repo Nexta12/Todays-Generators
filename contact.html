@@ -6,12 +6,144 @@
   <div id="navbar"></div>
    <div id="page-hero"></div>
 
-  <section class="py-5">
-    <div class="container">
-      <h1>Contact Us</h1>
-    </div>
-  </section>
 
+   <!-- Contents here -->
+
+ <section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Office Address -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <div class="mb-3 fs-1 text-emerald">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <h5>Office Address</h5>
+          <p class="text-muted mb-0">
+            Plot 12, Industrial Layout<br>
+            Lagos, Nigeria
+          </p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <div class="mb-3 fs-1 text-emerald">
+            <i class="bi bi-envelope"></i>
+          </div>
+          <h5>Email</h5>
+          <p class="mb-0">
+            <a href="mailto:info@todaysgenerators.com" class="text-decoration-none">
+              info@todaysgenerators.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <div class="mb-3 fs-1 text-emerald">
+            <i class="bi bi-telephone"></i>
+          </div>
+          <h5>Phone</h5>
+          <p class="mb-0">
+            <a href="tel:+2348012345678" class="text-decoration-none">+234 801 234 5678</a><br>
+            <a href="tel:+2348098765432" class="text-decoration-none">+234 809 876 5432</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm text-center p-4">
+          <div class="mb-3 fs-1 text-emerald">
+            <i class="bi bi-share"></i>
+          </div>
+          <h5>Social Media</h5>
+          <div class="d-flex justify-content-center gap-3 fs-4">
+            <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-dark"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+
+            <h4 class="text-center mb-4">Send Us a Message</h4>
+
+            <form action="https://formspree.io/f/xxxxabcd" method="POST">
+              
+              <div class="row g-3">
+
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+
+                <div class="col-12">
+                  <textarea
+                    name="message"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Your Message"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Honeypot (spam protection) -->
+                <input type="text" name="_gotcha" style="display:none">
+
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-emerald px-5">
+                    Send Message
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Modal Container -->
+<div id="quote-modal"></div>
   <div id="cta"></div>
   <div id="footer"></div>
 
@@ -20,7 +152,8 @@
    <script>
     loadPageHero(
   "Contact Us",
-  "Let’s help you find the right power solution"
+  "Let’s help you find the right power solution",
+   "assets/img/a1.jpeg"
 );
 
    </script>

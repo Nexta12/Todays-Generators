@@ -6,6 +6,7 @@
   <style>
     html{
       display: none;
+      visibility: hidden;
     }
   </style>
 </head>
@@ -30,10 +31,12 @@
           <p class="lead mb-4 text-secondary animate__animated animate__fadeInUp animate__delay-1s ">
             Sales, rentals, repairs, and servicing of all types of fairly used UK Perkins diesel generators, all across Nigeria.
           </p>
-          <a href="contact.html"
-            class="btn btn-emerald btn-lg px-4 animate__animated animate__zoomIn animate__delay-2s ">
-            Get a Quote
-          </a>
+         <a href="#"
+   class="btn btn-emerald btn-lg px-4 animate__animated animate__zoomIn animate__delay-2s"
+   data-bs-toggle="modal"
+   data-bs-target="#quoteModal">
+  Get a Quote
+</a>
         </div>
 
         <div class="col-lg-6 text-center mt-4 mt-lg-0">
@@ -53,7 +56,7 @@
       <div class="text-center mb-5">
         <h2 class="fw-bold title-with-underline">What We Do</h2>
         <p class="text-muted">
-         We specialize in the sales, rental, repair, and servicing of high-quality diesel generators for residential, commercial, and industrial use. Our team provides expert guidance to help you choose the right power solution, delivers reliable installations, and ensures long-term performance through proper maintenance and genuine spare parts. With a strong focus on durability, efficiency, and customer satisfaction, we support businesses and individuals with dependable power solutions designed to perform in demanding environments and critical situations
+         We specialize in the sales, rental, repair, and servicing of high-quality diesel generators for residential, commercial, and industrial use. 
         </p>
       </div>
 
@@ -84,7 +87,8 @@
 
 
 
-
+<!-- Modal Container -->
+<div id="quote-modal"></div>
   <div id="cta"></div>
   <div id="footer"></div>
 

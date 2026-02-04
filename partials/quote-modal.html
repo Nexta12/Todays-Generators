@@ -1,0 +1,62 @@
+<!-- Quote Modal -->
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-emerald text-white">
+        <h5 class="modal-title" id="quoteModalLabel">Request a Quote</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-4">
+        <form id="quoteForm">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="fullName" class="form-label">Full Name *</label>
+              <input type="text" class="form-control" id="fullName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email Address *</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone Number *</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="serviceType" class="form-label">Service Needed *</label>
+              <select class="form-select" id="serviceType" required>
+                <option value="">Select a service</option>
+                <option value="sales">Generator Sales</option>
+                <option value="rentals">Generator Rentals</option>
+                <option value="repairs">Repairs</option>
+                <option value="maintenance">Servicing & Maintenance</option>
+                <option value="spare-parts">Spare Parts</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="message" class="form-label">Additional Details</label>
+            <textarea class="form-control" id="message" rows="4" 
+                      placeholder="Tell us about your power needs, generator specifications, location, etc."></textarea>
+          </div>
+          
+          <div class="alert alert-info mt-4">
+            <small>
+              <i class="bi bi-info-circle me-2"></i>
+              We'll respond to your quote request within 24 hours. For urgent inquiries, call us directly.
+            </small>
+          </div>
+          
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-emerald px-5">
+              <i class="bi bi-send me-2"></i> Submit Request
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

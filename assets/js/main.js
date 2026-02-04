@@ -68,6 +68,42 @@ function loadPageHero(title, subtitle, imageUrl) {
 
 
 
+// Load quote modal
+loadPartial("quote-modal", "partials/quote-modal.html", () => {
+  // Form submission handler
+  const quoteForm = document.getElementById('quoteForm');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = {
+        name: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        service: document.getElementById('serviceType').value,
+        message: document.getElementById('message').value,
+        timestamp: new Date().toISOString()
+      };
+      
+      // Here you can send the data to your backend
+      console.log('Quote request:', formData);
+      
+      // Show success message
+      alert('Thank you! Your quote request has been submitted. We\'ll contact you within 24 hours.');
+      
+      // Hide modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('quoteModal'));
+      if (modal) modal.hide();
+      
+      // Reset form
+      quoteForm.reset();
+    });
+  }
+});
+
+
+
 // Load shared components
 loadPartial("site-head", "partials/header.html");
 loadPartial("navbar", "partials/navbar.html", setActiveNavLink);

@@ -274,5 +274,28 @@ body {
 }
 
 
+/* Quote Modal Styles */
+
+
+#quoteModal .modal-content {
+  border-radius: 12px;
+  border: none;
+}
+
+#quoteModal .bg-emerald {
+  background-color: #146c43 !important;
+}
+
+#quoteForm .form-control:focus,
+#quoteForm .form-select:focus {
+  border-color: #146c43;
+  box-shadow: 0 0 0 0.25rem rgba(46, 204, 113, 0.25);
+}
+
+.btn-close-white {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+
 
 
