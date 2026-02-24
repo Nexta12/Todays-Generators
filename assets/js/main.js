@@ -249,6 +249,44 @@ const generators = [
     details:
       "This 30kVA Mantrac Caterpillar generator delivers exceptional power density and reliability. Designed to handle heavy startup loads, it is an excellent choice for large homes with multiple air conditioners or small industrial plants. Features superior soundproofing and fuel management.",
   },
+  {
+    id: "100kva-marapco-uk-perkins",
+    name: "100kVA Marapco UK Perkins soundproof Diesel Generator",
+    price: "₦15,000,000",
+    availability: "In Stock",
+    image: "assets/img/100kva-marapco-1.jpeg",
+    images: [
+      "assets/img/100kva-marapco-1.jpeg",
+      "assets/img/100kva-marapco-2.jpeg",
+      "assets/img/100kva-marapco-3.jpeg",
+      "assets/img/100kva-marapco-4.jpeg",
+      "assets/img/100kva-marapco-5.jpeg",
+      "assets/img/100kva-marapco-6.jpeg",
+      "assets/img/100kva-marapco-7.jpeg",
+    ],
+    description: "100kVA Marapco UK Perkins soundproof Diesel Generator",
+    details: "High-performance 100kVA Marapco generator featuring a genuine UK Perkins engine. This soundproof unit is designed for reliable power in industrial and commercial settings.",
+  },
+  {
+    id: "100kva-mantrac-cat",
+    name: "100kVA Mantrac CAT",
+    price: "₦15,000,000",
+    availability: "In Stock",
+    image: "assets/img/100kva-mantrac-cat-1.jpeg",
+    images: [
+      "assets/img/100kva-mantrac-cat-1.jpeg",
+      "assets/img/100kva-mantrac-cat-2.jpeg",
+      "assets/img/100kva-mantrac-cat-3.jpeg",
+      "assets/img/100kva-mantrac-cat-4.jpeg",
+      "assets/img/100kva-mantrac-cat-5.jpeg",
+      "assets/img/100kva-mantrac-cat-6.jpeg",
+      "assets/img/100kva-mantrac-cat-7.jpeg",
+      "assets/img/100kva-mantrac-cat-8.jpeg",
+      "assets/img/100kva-mantrac-cat-9.mp4",
+    ],
+    description: "Robust 100kVA Mantrac Caterpillar generator, built for durability and continuous power supply",
+    details: "Robust 100kVA Mantrac Caterpillar generator, built for durability and continuous power supply. Ideal for large-scale operations and critical backup power.",
+  },
 ];
 const generatorsGrid = document.getElementById("generatorsGrid");
 
@@ -309,18 +347,28 @@ if (productDetailsContainer) {
 
     const thumbnailsHtml = product.images
       .map(
-        (img, index) => `
-      <div class="col-3 mb-2">
-        <img src="${img}" class="img-fluid rounded cursor-pointer thumbnail-img ${index === 0 ? "border-emerald" : ""}" 
-             onclick="changeMainImage('${img}', this)" alt="${product.name} view ${index + 1}">
-      </div>
-    `,
+        (src, index) => {
+          const isVideo = src.toLowerCase().endsWith('.mp4');
+          return `
+            <div class="col-3 mb-2">
+              <div class="thumbnail-wrapper rounded cursor-pointer ${index === 0 ? "border-emerald" : ""}" 
+                   onclick="changeMainMedia('${src}', this)" style="aspect-ratio: 1/1; overflow: hidden; position: relative;">
+                ${isVideo 
+                  ? `<div class="w-100 h-100 bg-light d-flex align-items-center justify-content-center">
+                       <i class="bi bi-play-circle-fill fs-3 text-emerald"></i>
+                     </div>`
+                  : `<img src="${src}" class="img-fluid w-100 h-100 object-fit-cover" alt="${product.name} view ${index + 1}">`
+                }
+              </div>
+            </div>
+          `;
+        },
       )
       .join("");
 
     productDetailsContainer.innerHTML = `
       <div class="col-lg-6">
-        <div class="main-image-container mb-3">
+        <div class="main-image-container mb-3" id="mainMediaWrapper">
           <img id="mainProductImage" src="${product.image}" class="img-fluid rounded shadow-sm" alt="${product.name}">
         </div>
         <div class="row gx-2">
@@ -363,10 +411,18 @@ if (productDetailsContainer) {
   }
 }
 
-function changeMainImage(src, thumbElement) {
-  document.getElementById("mainProductImage").src = src;
-  document.querySelectorAll(".thumbnail-img").forEach((img) => {
-    img.classList.remove("border-emerald");
+function changeMainMedia(src, thumbElement) {
+  const wrapper = document.getElementById("mainMediaWrapper");
+  const isVideo = src.toLowerCase().endsWith('.mp4');
+
+  if (isVideo) {
+    wrapper.innerHTML = `<video src="${src}" class="img-fluid rounded shadow-sm w-100" controls autoplay muted></video>`;
+  } else {
+    wrapper.innerHTML = `<img id="mainProductImage" src="${src}" class="img-fluid rounded shadow-sm" alt="Product Image">`;
+  }
+
+  document.querySelectorAll(".thumbnail-wrapper").forEach((el) => {
+    el.classList.remove("border-emerald");
   });
   thumbElement.classList.add("border-emerald");
 }
